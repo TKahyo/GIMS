@@ -11,12 +11,13 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
  
 # Requirement
 <details>
-Intel(R) Xeon(R) CPU E5-2603 v4 @ 1.70GHz
+CPU: Intel(R) Xeon(R) CPU E5-2603 v4 @ 1.70GHz
+GPU: NVIDIA TITAN X (Pascal) 12GB
+System Mem: DDR4 64GB
 
-
- Pytorch is used.
+Pytorch is used with CUDA.
 It is recommended to run in anaconda environment.
-
+___
 ```bash
 conda info
 ```
@@ -31,6 +32,12 @@ conda info
 ```
 ```bash
 pytorch                   2.0.0           cpu_generic_py310h3496f23_1    conda-forge
+```
+```bash
+nvcc --version
+```
+```bash
+Build cuda_12.4.r12.4/compiler.34097967_0
 ```
 </details>
  
