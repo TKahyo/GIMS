@@ -29,7 +29,7 @@ conda info
 ```
 ***
 ```bash
- conda list | grep pytorch
+conda list | grep pytorch
 ```
 ```bash
 pytorch                   2.0.0           cpu_generic_py310h3496f23_1    conda-forge
