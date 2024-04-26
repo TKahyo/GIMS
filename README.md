@@ -47,7 +47,13 @@ Build cuda_12.4.r12.4/compiler.34097967_0
 1) Converting .csv file
    ```bash
    ./converter.sh -f DEMO_DATA1.csv -r 600,899,99 -e 26 -w 27 -l DEMO_LIST.csv -s DEMO_DATA1_conv
-   ```
+   ```   
+-r: lower _m/z_ value, upper _m/z_ value
+-e: height (in pixels)
+-w: width (in pixels)
+-l: list of selected _m/z_ values (.csv)
+-s: save name
+
 2) Making datasets for training and test
 
 3) Training
