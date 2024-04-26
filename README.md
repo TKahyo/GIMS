@@ -14,15 +14,18 @@ It is recommended to run in anaconda environment.
 ```bash
 conda info
 ```
-
 ```bash
            conda version : 23.9.0
     conda-build version : 3.27.0
          python version : 3.10.9.final.0
 ```
- 
-* huga 3.5.2
-* hogehuga 1.0.2
+
+```bash
+ conda list | grep pytorch
+```
+```bash
+pytorch                   2.0.0           cpu_generic_py310h3496f23_1    conda-forge
+```
  
 # Installation
 
