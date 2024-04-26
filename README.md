@@ -35,7 +35,15 @@ pytorch                   2.0.0           cpu_generic_py310h3496f23_1    conda-f
 </details>
  
 # Usage
-DEMO
+1) Converting .csv file
+   ```bash
+   ./converter.sh -f DEMO_DATA1.csv -r 600,899,99 -e 26 -w 27 -l DEMO_LIST.csv -s DEMO_DATA1_conv
+   ```
+2) Making datasets for training and test
+
+3) Training
+
+4) Imaging
  
 
 # Note
