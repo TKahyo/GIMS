@@ -10,7 +10,13 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
 
  
 # Requirement
+<details>
+Intel(R) Xeon(R) CPU E5-2603 v4 @ 1.70GHz
+
+
+ Pytorch is used.
 It is recommended to run in anaconda environment.
+
 ```bash
 conda info
 ```
@@ -26,8 +32,10 @@ conda info
 ```bash
 pytorch                   2.0.0           cpu_generic_py310h3496f23_1    conda-forge
 ```
+
  
 # Installation
+
 
 ```bash
 pip install huga_package
