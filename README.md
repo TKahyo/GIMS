@@ -12,7 +12,9 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
 # Requirement
 <details>
 CPU: Intel(R) Xeon(R) CPU E5-2603 v4 @ 1.70GHz  
+ 
 GPU: NVIDIA TITAN X (Pascal) 12GB  
+
 System Mem: DDR4 64GB  
 
 Pytorch is used with CUDA.  
