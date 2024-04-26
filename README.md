@@ -41,6 +41,7 @@ nvcc --version
 ```bash
 Build cuda_12.4.r12.4/compiler.34097967_0
 ```
+*Other libraries: pandas, dask
 </details>
  
 # Usage
