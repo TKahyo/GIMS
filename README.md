@@ -6,7 +6,7 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
 
  
 # Features
- The CVAE model trained on surrounding nine pixel data to interpolate center three pixel data. Experience with IMS analysis is desirable.
+ The CVAE model trained on surrounding nine pixel data to interpolate center three pixel data.
 
  
 # Requirement
@@ -32,29 +32,17 @@ conda info
 ```bash
 pytorch                   2.0.0           cpu_generic_py310h3496f23_1    conda-forge
 ```
-
- 
-# Installation
-
-
-```bash
-pip install huga_package
-```
+</details>
  
 # Usage
 DEMO
  
 
- 
 # Note
- 
-
+Experience with IMS analysis is desirable.
  
 # Author
-
- 
-* 作成者
-* 所属
-* E-mail
+Tomoaki Kahyo
  
 # License
+GNU General Public License v3.0 
