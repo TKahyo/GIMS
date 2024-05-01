@@ -56,12 +56,12 @@ Build cuda_12.4.r12.4/compiler.34097967_0
 　　-s: save name   
   *output    
   ```markdown
-   DEMO_DATA1_conv_dir    
-    |___ DEMO_DATA1_conv/   
-         |___ d3_data_index_x_DEMO_DATA1_conv.pkl    
-         |___ d3_data_index_y_DEMO_DATA1_conv.pkl    
-         |___ d3_data_y_DEMO_DATA1_conv.pkl   
-    |___ DEMO_DATA1_conv_narrowed.tsv   
+  DEMO_DATA1_conv_dir    
+   |___ DEMO_DATA1_conv/   
+        |___ d3_data_index_x_DEMO_DATA1_conv.pkl    
+        |___ d3_data_index_y_DEMO_DATA1_conv.pkl    
+        |___ d3_data_y_DEMO_DATA1_conv.pkl   
+   |___ DEMO_DATA1_conv_narrowed.tsv   
   ```
 
 2) Training
