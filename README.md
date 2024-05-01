@@ -193,21 +193,30 @@ d5_applying.tsv
 
 **[6] Imaging**    
  ```bash
-python ./scripts/TK_d2_Imaging.py --file [.tsv] --coln 3 --size 28,27  --mz 888.63 --save d2_imaging_88863
+python ./scripts/TK_d2_Imaging.py --file d5_applying.tsv --size 28,27  --mz 888.63 --save d2_imaging_d5
  ```
-*[.tsv]: 
+ ```bash
+python ./scripts/TK_d2_Imaging.py --file d2B_downsampling.tsv --size 14,14  --mz 888.63 --save d2_imaging_d2B
+ ```
+*output
+ ```bash
+d2_imaging_d5_88863.png
+d2_imaging_d2B_88863.png
+ ```
 
 
 # Note
 Experience with IMS analysis is desirable.
 
-# Flow
-<div class="flow">
 
-</div>
+# Flow
+![Flow chart]
+()
+
  
 # Author
 Tomoaki Kahyo
+
  
 # License
 GNU General Public License v3.0 
