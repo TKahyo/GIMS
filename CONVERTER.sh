@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#./converter.sh -f DEMO_DATA1.csv -r 600,899,99 -e 26 -w 27 -l DEMO_LIST.csv -s DEMO_DATA1_conv >log_converter 2>&1 &
+#./CONVERTER.sh -f DEMO_DATA1.csv -r 600,899,99 -e 26 -w 27 -l DEMO_LIST.csv -s DEMO_DATA1_conv >log_converter 2>&1 &
 
 function usage {
   cat <<EOM
@@ -89,13 +89,16 @@ SCRIPT1="$SCRIPT_DIR/scripts/TK_d1_Converting.pl"
 CURRENT_DATE=$(date +"%Y-%m-%d_%H-%M-%S")
 FILE_NAME="${CURRENT_DATE}.tsv"
 perl ${SCRIPT1} --file ${FILE} --unit ${DECIMAL} --machine ${PLATFORM} --save ${FILE_NAME} --range ${RANGE}
+ls -lh
 echo "\n"
 
 echo ">> TK_d3_Datasetting.py..."
 SCRIPT2="$SCRIPT_DIR/scripts/TK_d3_Datasetting.py"
 python ${SCRIPT2}  --file ${FILE_NAME} --z 1 --narrow ${LIST} --coln ${COLN} --stride ${STRIDE} --height ${HEIGHT} --width ${WIDTH} --batch 10 --save ${SAVE}
+ls -lh
+echo "\n"
 SAVE_DIR="${SAVE}_dir"
-mkdir ${SAVE_DIR}
+mkdir -p ${SAVE_DIR}
 SAVE2="${SAVE}_narrowed.tsv"
 mv ${SAVE} ${SAVE_DIR}
 mv ${SAVE2} ${SAVE_DIR}
