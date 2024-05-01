@@ -148,8 +148,13 @@ cat path_list_test.txt
  summary.txt
  ```
 
+
+**[4] Making low resolution data for demo***
+
+
+
    
-**[4] Applying a model**
+**[5] Applying a model**
  ```bash
 python ./scripts/TK_d5_Applying.py --help
  ```
@@ -182,7 +187,8 @@ python ./scripts/TK_d5_Applying.py --data XXX.tsv --model G_YYY.pth --width 14 -
  ```
 
 
-**[5] Imaging**    
+**[6] Imaging**    
+
 
 
 
