@@ -73,6 +73,7 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
 
   *Do the same for DEMO_DATA_test (-e 28 -w 27)
 
+
 **[2] Making path_file.txt**
 ```bash
 cat path_list.txt
@@ -87,6 +88,7 @@ cat path_list_test.txt
 ```bash
 ./DEMO_DATA_test_dir/DEMO_DATA_test_conv/
 ```
+
   
 **[3] Leaning**    
    ```bash
@@ -145,9 +147,34 @@ cat path_list_test.txt
   └--- ...
  summary.txt
  ```
+
    
 **[4] Applying a model**
-
+ ```bash
+python ./scripts/TK_d5_Applying.py --help
+ ```
+ ```bash
+  -h, --help            show this help message and exit
+  --data DATA, -d DATA  Path of 1_ims.tsv data *
+  --coln COLN, -c COLN  Start column of m/z, default=3
+  --shape SHAPE, -sh SHAPE
+                        tensor shape of mass spectrum e.g 2,11, default=2,11
+  --height HEIGHT, -he HEIGHT
+                        The number of origin picture height pixel *
+  --width WIDTH, -wi WIDTH
+                        The number of origin picture width pixel *
+  --modelG MODELG, -mg MODELG
+                        Applied modelG.pkl *
+  --header HEADER, -hd HEADER
+                        Line number with header, default=3
+  --thresh THRESH, -th THRESH
+                        Threshold for zero value, default=0
+  --odd ODD, -o ODD     The number of original pixels is odd => --odd height or --odd width or --odd both, default=none
+ ```
+---
+ ```bash
+python ./scripts/TK_d5_Applying.py 
+ ```
 
 
 **[5] Imaging**    
