@@ -86,41 +86,41 @@ cat path_list_test.txt
    ```bash
    python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning_result
    ```
-   ```bash
-  -h, --help            show this help message and exit
-  --data DATA, -d DATA  Path file of directories containing the pickle data *
-  --batch BATCH, -b BATCH
-                        Batch size, default=10
-  --epoch EPOCH, -e EPOCH
-                        Epoch, default=100
-  --start START, -st START
-                        Restarging epoch in using --modelG
-  --modelG MODELG, -mg MODELG
-                        Relearning using modelG
-  --modelD MODELD, -md MODELD
-                        Relearning using modelD
-  --dlr DLR, -dlr DLR   Learning rate, default 0.00015
-  --glr GLR, -glr GLR   Learning rate, default 0.00015
-  --shape SHAPE, -sh SHAPE
-                        Tensor shape of mass spectrum e.g 2,11. Needed to be mathed to the total
-                        number of m/z peaks, default=2,11
-  --fbatch FBATCH, -fb FBATCH
-                        Batch size of files. e.g. fbatch=3 => 3 files import once from --data,
-                        default=2
-  --beta1g BETA1G, -b1g BETA1G
-                        Adam parameter:beta1 of G
-  --beta1d BETA1D, -b1d BETA1D
-                        Adam parameter:beta1 of D
-  --noise NOISE, -n NOISE
-                        Rate of 1 in noise, default 0 = no noize
-  --noisemin NOISEMIN, -nmi NOISEMIN
-                        Min of noize
-  --noisemax NOISEMAX, -nma NOISEMAX
-                        Max of noize
-  --test TEST, -t TEST  Path file of directories containing the pickle for test. If not necessary,
-                        put the same file as --data *
-  --save SAVE, -s SAVE  pth save directory *
- ```
+ 
+    -h, --help            show this help message and exit
+    --data DATA, -d DATA  Path file of directories containing the pickle data *
+    --batch BATCH, -b BATCH
+                          Batch size, default=10
+    --epoch EPOCH, -e EPOCH
+                          Epoch, default=100
+    --start START, -st START
+                          Restarging epoch in using --modelG
+    --modelG MODELG, -mg MODELG
+                          Relearning using modelG
+    --modelD MODELD, -md MODELD
+                          Relearning using modelD
+    --dlr DLR, -dlr DLR   Learning rate, default 0.00015
+    --glr GLR, -glr GLR   Learning rate, default 0.00015
+    --shape SHAPE, -sh SHAPE
+                          Tensor shape of mass spectrum e.g 2,11. Needed to be mathed to the total
+                          number of m/z peaks, default=2,11
+    --fbatch FBATCH, -fb FBATCH
+                          Batch size of files. e.g. fbatch=3 => 3 files import once from --data,
+                          default=2
+    --beta1g BETA1G, -b1g BETA1G
+                          Adam parameter:beta1 of G
+    --beta1d BETA1D, -b1d BETA1D
+                          Adam parameter:beta1 of D
+    --noise NOISE, -n NOISE
+                          Rate of 1 in noise, default 0 = no noize
+    --noisemin NOISEMIN, -nmi NOISEMIN
+                          Min of noize
+    --noisemax NOISEMAX, -nma NOISEMAX
+                          Max of noize
+    --test TEST, -t TEST  Path file of directories containing the pickle for test. If not necessary,
+                          put the same file as --data *
+    --save SAVE, -s SAVE  pth save directory *
+
 *output  
  ```bash
  d4_learning_result_BEST_weight/
