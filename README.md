@@ -2,11 +2,10 @@
 This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data using generative deep machine learning method.
 
 # DEMO
- 
-
+Here, two kind demo data (DEMO_DATA1.csv and DEMO_DATA_test.csv) are provided. 
  
 # Features
- The CVAE model trained on surrounding nine pixel data to interpolate center three pixel data.
+The CVAE model trained on surrounding nine pixel data to interpolate center three pixel data.
 
  
 # Requirement
@@ -44,6 +43,12 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
  GPU: NVIDIA TITAN X (Pascal) 12GB  
  System Mem: DDR4 64GB   
 </details>
+
+
+# Flow
+![Flow chart](GIMS_flow_chart.png)
+
+
  
 # Usage
 **[1] Converting .csv file and Making datasets for training/test**
@@ -209,10 +214,6 @@ d2_imaging_d2B_88863.png
 Experience with IMS analysis is desirable.
 
 
-# Flow
-![Flow chart](GIMS_flow_chart.png)
-
- 
 # Author
 Tomoaki Kahyo
 
