@@ -183,18 +183,19 @@ python ./scripts/TK_d5_Applying.py --help
  ```
 ---
  ```bash
-python ./scripts/TK_d5_Applying.py --data XXX.tsv --model G_YYY.pth --width 14 --height 14 --odd width --shape 2,11 --save d5_applying
+python ./scripts/TK_d5_Applying.py --data d2B_downsampling.tsv --model G_YYY.pth  --height 14 --width 14--odd width --shape 2,11 --save d5_applying
  ```
 *output
  ```bash
 
- ```
+ ```bash
 
 
 **[6] Imaging**    
-
-
-
+ ```bash
+python ./scripts/TK_d2_Imaging.py --file [.tsv] --coln 3 --size 28,27  --mz 888.63 --save d2_imaging_88863
+ ```
+*[.tsv]: 
 
 # Note
 Experience with IMS analysis is desirable.
