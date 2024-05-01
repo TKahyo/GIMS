@@ -45,7 +45,7 @@ Build cuda_12.4.r12.4/compiler.34097967_0
 </details>
  
 # Usage
-1) Converting .csv file and Making datasets for training/test
+**[1] Converting .csv file and Making datasets for training/test**
    ```bash
    ./converter.sh -f DEMO_DATA1.csv -r 600,899,99 -e 26 -w 27 -l DEMO_LIST.csv -s DEMO_DATA1_conv
    ```   
@@ -66,7 +66,7 @@ Build cuda_12.4.r12.4/compiler.34097967_0
 
   *Do the same for DEMO_DATA_test (-e 28 -w 27)
 
-2) Making path_file.txt
+**[2] Making path_file.txt**
 ```bash
 cat path_list.txt
 ```
@@ -80,12 +80,12 @@ cat path_list_test.txt
 ./DEMO_DATA_test_dir/DEMO_DATA_test_conv/
 ```
   
-3) Leaning    
+**[3] Leaning**    
    ```bash
    python ./scripts/TK_d4_learning.py --data paths_file.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning_result
    ```
    
-5) Imaging
+**[4] Imaging**
  
 
 # Note
