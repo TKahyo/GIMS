@@ -11,8 +11,8 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
  
 # Requirement
 <details>
-Pytorch is used with CUDA.  
-It is recommended to run in anaconda environment.  
+Pytorch is used with CUDA.   
+It is recommended to run in anaconda environment.   
 ___
 ```bash
 conda info
@@ -36,9 +36,9 @@ nvcc --version
 ```bash
 Build cuda_12.4.r12.4/compiler.34097967_0
 ```
-*Other libraries: pandas, dask
+*Other libraries: pandas, dask   
 
-*The hardware environment is described below for reference.
+*The hardware environment is described below for reference.   
 CPU: Intel(R) Xeon(R) CPU E5-2603 v4 @1.70GHz    
  
 GPU: NVIDIA TITAN X (Pascal) 12GB  
