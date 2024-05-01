@@ -121,6 +121,23 @@ cat path_list_test.txt
                         put the same file as --data *
   --save SAVE, -s SAVE  pth save directory *
  ```
+*output  
+ ```bash
+ d4_learning_result_BEST_weight/
+  |--- D_XXXX.pth
+  |     ...
+  |--- G_XXXX.pth
+  └     ...
+ d4_learning_result_D_weight/
+  |--- D_YYYY.pth
+  |    ...
+  └--- ...
+ d4_learning_result_G_weight/
+  |--- G_YYYY.pth
+  |    ...
+  └--- ...
+ summary.txt
+ ```
    
 **[4] Imaging**
  
