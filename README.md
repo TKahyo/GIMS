@@ -48,13 +48,19 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
 # Usage
 **[1] Converting .csv file and Making datasets for training/test**
    ```bash
-   ./converter.sh -f DEMO_DATA1.csv -r 600,899,99 -e 26 -w 27 -l DEMO_LIST.csv -s DEMO_DATA1_conv
-   ```   
+   ./converter.sh --help
+   ```
+   ```bash
 　　-r: lower _m/z_ value, upper _m/z_ value   
 　　-e: height (in pixels)   
 　　-w: width (in pixels)   
 　　-l: list of selected _m/z_ values (.csv)   
-　　-s: save name   
+　　-s: save name
+   ```
+---
+   ```bash
+   ./converter.sh -f DEMO_DATA1.csv -r 600,899,99 -e 26 -w 27 -l DEMO_LIST.csv -s DEMO_DATA1_conv
+   ```
   *output    
  ```bash
  DEMO_DATA1_conv_dir    
@@ -84,9 +90,9 @@ cat path_list_test.txt
   
 **[3] Leaning**    
    ```bash
-   python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning_result
+   python ./scripts/TK_d4_learning.py --help
    ```
- 
+   ```bash
     -h, --help            show this help message and exit   
     --data DATA, -d DATA  Path file of directories containing the pickle data *   
     --batch BATCH, -b BATCH   
@@ -118,7 +124,10 @@ cat path_list_test.txt
                           Max of noize   
     --test TEST, -t TEST  Path file of directories containing the pickle for test. If not necessary, put the same file as --data *   
     --save SAVE, -s SAVE  pth save directory *   
-
+   ```
+   ```bash
+   python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning_result
+   ```
 *output  
  ```bash
  d4_learning_result_BEST_weight/
