@@ -133,20 +133,20 @@ cat path_list_test.txt
     --save SAVE, -s SAVE  pth save directory *   
    ```
    ```bash
-   python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save d4_learning
+   python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning
    ```
 *output  
  ```bash
- d4_learning_BEST_weight/
+ learning_BEST_weight/
   |--- D_XXXX.pth
   |     ...
   |--- G_XXXX.pth
   └     ...
- d4_learning_D_weight/
+ learning_D_weight/
   |--- D_YYYY.pth
   |    ...
   └--- ...
- d4_learning_G_weight/
+ learning_G_weight/
   |--- G_YYYY.pth
   |    ...
   └--- ...
@@ -156,11 +156,11 @@ cat path_list_test.txt
 
 **[4] Making low resolution data for demo**
  ```bash
-python ./scripts/TK_d2B_Downsampling.py --file DEMO_DATA_test_conv_dir/DEMO_DATA_test_conv_narrowed.tsv --size 28,27 --donwn 2 --save d2B_downsampling
+python ./scripts/TK_d2B_Downsampling.py --file DEMO_DATA_test_conv_dir/DEMO_DATA_test_conv_narrowed.tsv --size 28,27 --donwn 2 --save downsampling
  ```
 *output
  ```bash
-d2B_downsampling.tsv
+ downsampling.tsv
  ```
    
 **[5] Applying a model**
@@ -188,25 +188,30 @@ python ./scripts/TK_d5_Applying.py --help
  ```
 ---
  ```bash
-python ./scripts/TK_d5_Applying.py --data d2B_downsampling.tsv --model G_YYY.pth  --height 14 --width 14--odd width --shape 2,11 --save d5_applying
+python ./scripts/TK_d5_Applying.py --data downsampling.tsv --model G_YYY.pth  --height 14 --width 14--odd width --shape 2,11 --save applying
  ```
 *output
  ```bash
-d5_applying.tsv
+applying.tsv
  ```
 
 
 **[6] Imaging**    
+
  ```bash
-python ./scripts/TK_d2_Imaging.py --file d5_applying.tsv --size 28,27  --mz 888.63 --save d2_imaging_d5
+python ./scripts/TK_d2_Imaging.py --file DEMO_DATA1_conv_narrowed.tsv --size 28,27  --mz 888.63 --save test_imaging_d5
  ```
  ```bash
-python ./scripts/TK_d2_Imaging.py --file d2B_downsampling.tsv --size 14,14  --mz 888.63 --save d2_imaging_d2B
+python ./scripts/TK_d2_Imaging.py --file applying.tsv --size 28,27  --mz 888.63 --save applying_imaging_d5
+ ```
+ ```bash
+python ./scripts/TK_d2_Imaging.py --file downsampling.tsv --size 14,14  --mz 888.63 --save downsampling_imaging_d2B
  ```
 *output
  ```bash
-d2_imaging_d5_88863.png
-d2_imaging_d2B_88863.png
+test_imaging_88863
+applying_imaging_88863.png
+downsampling_imaging_88863.png
  ```
 
 
