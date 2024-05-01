@@ -46,7 +46,7 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
 </details>
  
 # Usage
-**##[1] Converting .csv file and Making datasets for training/test**
+**[1] Converting .csv file and Making datasets for training/test**
    ```bash
    ./converter.sh --help
    ```
@@ -74,7 +74,7 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
   *Do the same for DEMO_DATA_test (-e 28 -w 27)
 
 
-##**[2] Making path_file.txt**
+**[2] Making path_file.txt**
 ```bash
 cat path_list.txt
 ```
@@ -90,7 +90,7 @@ cat path_list_test.txt
 ```
 
   
-##**[3] Leaning**    
+**[3] Leaning**    
    ```bash
    python ./scripts/TK_d4_learning.py --help
    ```
@@ -149,7 +149,7 @@ cat path_list_test.txt
  ```
 
 
-##**[4] Making low resolution data for demo***
+**[4] Making low resolution data for demo***
  ```bash
 python ./scripts/TK_d2B_Downsampling.py --file DEMO_DATA_test_conv_dir/DEMO_DATA_test_conv_narrowed.tsv --size 28,27 --donwn 2 --save d2B_downsampling
  ```
@@ -158,7 +158,7 @@ python ./scripts/TK_d2B_Downsampling.py --file DEMO_DATA_test_conv_dir/DEMO_DATA
 
  ```
    
-##**[5] Applying a model**
+**[5] Applying a model**
  ```bash
 python ./scripts/TK_d5_Applying.py --help
  ```
@@ -193,7 +193,7 @@ python ./scripts/TK_d5_Applying.py --data d2B_downsampling.tsv --model G_YYY.pth
  ```
 
 
-##**[6] Imaging**    
+**[6] Imaging**    
  ```bash
 python ./scripts/TK_d2_Imaging.py --file [.tsv] --coln 3 --size 28,27  --mz 888.63 --save d2_imaging_88863
  ```
@@ -202,6 +202,21 @@ python ./scripts/TK_d2_Imaging.py --file [.tsv] --coln 3 --size 28,27  --mz 888.
 
 # Note
 Experience with IMS analysis is desirable.
+
+# Flow
+<div class="flow">
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
+</div>
  
 # Author
 Tomoaki Kahyo
