@@ -128,20 +128,20 @@ cat path_list_test.txt
     --save SAVE, -s SAVE  pth save directory *   
    ```
    ```bash
-   python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning_result
+   python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save d4_learning
    ```
 *output  
  ```bash
- d4_learning_result_BEST_weight/
+ d4_learning_BEST_weight/
   |--- D_XXXX.pth
   |     ...
   |--- G_XXXX.pth
   └     ...
- d4_learning_result_D_weight/
+ d4_learning_D_weight/
   |--- D_YYYY.pth
   |    ...
   └--- ...
- d4_learning_result_G_weight/
+ d4_learning_G_weight/
   |--- G_YYYY.pth
   |    ...
   └--- ...
@@ -155,10 +155,10 @@ python ./scripts/TK_d5_Applying.py --help
  ```
  ```bash
   -h, --help            show this help message and exit
-  --data DATA, -d DATA  Path of 1_ims.tsv data *
+  --data DATA, -d DATA  Path of target data (.tsv) *
   --coln COLN, -c COLN  Start column of m/z, default=3
   --shape SHAPE, -sh SHAPE
-                        tensor shape of mass spectrum e.g 2,11, default=2,11
+                        Tensor shape of mass spectrum e.g 2,11, default=2,11
   --height HEIGHT, -he HEIGHT
                         The number of origin picture height pixel *
   --width WIDTH, -wi WIDTH
@@ -166,14 +166,19 @@ python ./scripts/TK_d5_Applying.py --help
   --modelG MODELG, -mg MODELG
                         Applied modelG.pkl *
   --header HEADER, -hd HEADER
-                        Line number with header, default=3
+                        Line number of header, default=3
   --thresh THRESH, -th THRESH
                         Threshold for zero value, default=0
   --odd ODD, -o ODD     The number of original pixels is odd => --odd height or --odd width or --odd both, default=none
+  --save SAVE, -s SAVE  Save basename
  ```
 ---
  ```bash
-python ./scripts/TK_d5_Applying.py 
+python ./scripts/TK_d5_Applying.py --data XXX.tsv --model G_YYY.pth --width 14 --height 14 --odd width --shape 2,11 --save d5_applying
+ ```
+*output
+ ```bash
+
  ```
 
 
