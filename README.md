@@ -55,7 +55,7 @@ Build cuda_12.4.r12.4/compiler.34097967_0
 　　-l: list of selected _m/z_ values (.csv)   
 　　-s: save name   
   *output    
- ```markdown
+ ```bash
  DEMO_DATA1_conv_dir    
   |--- DEMO_DATA1_conv/   
   |    |--- d3_data_index_x_DEMO_DATA1_conv.pkl    
