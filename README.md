@@ -150,9 +150,13 @@ cat path_list_test.txt
 
 
 **[4] Making low resolution data for demo***
+ ```bash
+python ./scripts/TK_d2B_Downsampling.py --file DEMO_DATA_test_conv_dir/DEMO_DATA_test_conv_narrowed.tsv --size 28,27 --donwn 2 --save d2B_downsampling
+ ```
+*output
+ ```bash
 
-
-
+ ```
    
 **[5] Applying a model**
  ```bash
