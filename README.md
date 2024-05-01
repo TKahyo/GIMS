@@ -60,9 +60,11 @@ Build cuda_12.4.r12.4/compiler.34097967_0
   |--- DEMO_DATA1_conv/   
   |    |--- d3_data_index_x_DEMO_DATA1_conv.pkl    
   |    |--- d3_data_index_y_DEMO_DATA1_conv.pkl    
-  |    |--- d3_data_y_DEMO_DATA1_conv.pkl   
-  |--- DEMO_DATA1_conv_narrowed.tsv   
+  |    └--- d3_data_y_DEMO_DATA1_conv.pkl   
+  └--- DEMO_DATA1_conv_narrowed.tsv   
  ```
+
+  *Do the same for DEMO_DATA_test (-e 28 -w 27)
 
 2) Making path_file.txt
 ```bash
@@ -70,6 +72,12 @@ cat path_list.txt
 ```
 ```bash
 ./DEMO_DATA1_dir/DEMO_DATA1_conv/
+```
+```bash
+cat path_list_test.txt
+```
+```bash
+./DEMO_DATA_test_dir/DEMO_DATA_test_conv/
 ```
   
 3) Leaning    
