@@ -23,6 +23,7 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
     conda-build version : 3.27.0
          python version : 3.10.9.final.0
  ```
+
  
  ```bash   
  conda list | grep pytorch
@@ -30,6 +31,7 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
  ```bash   
  pytorch                   2.0.0           cpu_generic_py310h3496f23_1    conda-forge
  ```
+
 
  ```bash   
  nvcc --version
