@@ -46,7 +46,7 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
 </details>
  
 # Usage
-##**[1] Converting .csv file and Making datasets for training/test**
+**##[1] Converting .csv file and Making datasets for training/test**
    ```bash
    ./converter.sh --help
    ```
