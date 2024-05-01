@@ -64,9 +64,14 @@ Build cuda_12.4.r12.4/compiler.34097967_0
   |--- DEMO_DATA1_conv_narrowed.tsv   
  ```
 
-2) Training
-   ```bash
+2) Making path_file.txt
+```bash
 
+```
+  
+3) 
+   ```bash
+   python ./scripts/TK_d4_learning.py --data paths_file.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 3000--save learning_result
    ```   
 5) Imaging
  
