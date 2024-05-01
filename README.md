@@ -139,8 +139,13 @@ cat path_list_test.txt
  summary.txt
  ```
    
-**[4] Imaging**
- 
+**[4] Applying a model**
+
+
+
+***[5] Imaging***
+
+
 
 # Note
 Experience with IMS analysis is desirable.
