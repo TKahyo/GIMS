@@ -66,13 +66,17 @@ Build cuda_12.4.r12.4/compiler.34097967_0
 
 2) Making path_file.txt
 ```bash
-
+cat path_list.txt
+```
+```bash
+./DEMO_DATA1_dir/DEMO_DATA1_conv/
 ```
   
-3) 
+3) Leaning    
    ```bash
-   python ./scripts/TK_d4_learning.py --data paths_file.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 3000--save learning_result
-   ```   
+   python ./scripts/TK_d4_learning.py --data paths_file.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning_result
+   ```
+   
 5) Imaging
  
 
