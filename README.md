@@ -210,8 +210,7 @@ Experience with IMS analysis is desirable.
 
 
 # Flow
-![Flow chart]
-()
+![Flow chart](https://github.com/TKahyo/GIMS/GIMS_flow_chart.png)
 
  
 # Author
