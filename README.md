@@ -12,6 +12,7 @@ This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data 
 # Requirement
 <details>
  Pytorch is used with CUDA.   
+ 
  It is recommended to run in anaconda environment.    
  ___   
  ```bash   
