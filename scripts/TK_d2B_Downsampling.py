@@ -17,10 +17,10 @@ import subprocess
 import pdb # pdb.set_trace()
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--file', '-f', help = 'IMS data file path')
-parser.add_argument('--coln', '-c', default=3, type=int, help = 'Start column of m/z')
-parser.add_argument('--size', '-sh', help = 'tensor size of original mass spectrum e.g 24,28')
-parser.add_argument('--down', '-d', default=1, type=int, help = 'Downsamplint rate e.g. --down 2 => 1/2,1/2')
+parser.add_argument('--file', '-f', help = 'IMS data file path *')
+parser.add_argument('--coln', '-c', default=3, type=int, help = 'Start column of m/z, default=3')
+parser.add_argument('--size', '-sh', help = 'Imaging size of original data (height,width) e.g 24,28 *')
+parser.add_argument('--down', '-d', default=1, type=int, help = 'Downsamplint rate e.g. --down 2 => 1/2,1/2, default=2')
 parser.add_argument('--save', '-s', type=str, help = 'basename for picture')
 args = parser.parse_args()
 

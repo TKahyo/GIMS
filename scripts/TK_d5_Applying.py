@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Jul 21 16:22:24 2023
-python this.py --data XXX.tsv --coln 3 --model G_YYY.pth --up 2 --width 14 --height 14 --odd width --shape 2,11 --save d5_XXX_YYY
+python this.py --data XXX.tsv --coln 3 --model G_YYY.pth --up 2  --height 14 --width 14 --odd width --shape 2,11 --save d5_XXX_YYY
 (PID:v16)
 @author: tk
 """
@@ -19,16 +19,15 @@ import pickle
 import pdb # pdb.set_trace()
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--data', '-d', help = 'Path of 1_ims.tsv data')
-parser.add_argument('--coln', '-c', default=3, type=int, help = 'Start column of m/z')
-parser.add_argument('--shape', '-sh', help = 'tensor shape of mass spectrum e.g 100,300')
-parser.add_argument('--height', '-he', type=int, help = 'The number of origin picture height pixel')
-parser.add_argument('--width', '-wi', type=int, help = 'The number of origin picture width pixel')
-parser.add_argument('--up', '-u', type=int, help = 'Upscale (high spatial resolution rate) e.g 2')
-parser.add_argument('--modelG', '-mg', help = 'Saved modelG.pkl')
-parser.add_argument('--header', '-hd', default=3, help = 'Line number with header')
-parser.add_argument('--thresh', '-th', default=0, help = 'Threshold for zero value')
-parser.add_argument('--odd', '-o', type=str, default='none',help = 'The number of original pixels is odd => --odd height or width or both')
+parser.add_argument('--data', '-d', help = 'Path of target data (.tsv) *')
+parser.add_argument('--coln', '-c', default=3, type=int, help = 'Start column of m/z, default=3')
+parser.add_argument('--shape', '-sh', default='2,11', help = 'Tensor shape of mass spectrum e.g 2,11, default=2,11')
+parser.add_argument('--height', '-he', type=int, help = 'The number of origin picture height pixel *')
+parser.add_argument('--width', '-wi', type=int, help = 'The number of origin picture width pixel *')
+parser.add_argument('--modelG', '-mg', help = 'Applied modelG.pkl *')
+parser.add_argument('--header', '-hd', default=3, help = 'Line number of header, default=3')
+parser.add_argument('--thresh', '-th', default=0, help = 'Threshold for zero value, default=0')
+parser.add_argument('--odd', '-o', type=str, default='none',help = 'The number of original pixels is odd => --odd height or --odd width or --odd both, default=none')
 parser.add_argument('--save', '-s', type=str, help = 'Save basename')
 args = parser.parse_args()    
 
@@ -125,7 +124,7 @@ class load_data():
         del self.origin
 
     def reconstructing(self, args):        
-        self.new_pixel_size = len(self.generated_pixels)*args.up*args.up
+        self.new_pixel_size = len(self.generated_pixels)*SCALE*SCALE
         print(">> Once, total {} pixels generated as high spatial resolution data (including padding area, here)".format(self.new_pixel_size))
         zero_pic_pd = pd.DataFrame(np.zeros((self.new_pixel_size, self.shape[0]*self.shape[1]))) / 0 # intensionally making NaN pd data
         print(">> Zero picture generated => {}".format(len(zero_pic_pd)))
@@ -133,9 +132,9 @@ class load_data():
         """ Targeting generated data """
         count_new_pix = 0
         count_origin_pix = 0
-        new_width = args.width*args.up
-        for j in range(0, len(zero_pic_pd), args.up):
-            if not (j//new_width)%args.up == 0: # skipped in the interpolated lanes
+        new_width = args.width*SCALE
+        for j in range(0, len(zero_pic_pd), SCALE):
+            if not (j//new_width)%SCALE == 0: # skipped in the interpolated lanes
                 continue
             try:
                 splits = list(torch.chunk(self.generated_pixels[count_origin_pix], chunks=3, dim=1)) # chunking (1, 3, shape[0], shape[1]) to list of (1, 1, shape[0], shape[1])
@@ -143,7 +142,7 @@ class load_data():
                 print("*** ERROR@chunk *** => j:{}".format(j))
 
             iny1 = j + 1
-            iny2 = j + args.width*args.up
+            iny2 = j + args.width*SCALE
             iny3 = iny2 + 1
             try:
                 zero_pic_pd.iloc[j] = self.center_pixels[count_origin_pix] ###
@@ -160,7 +159,7 @@ class load_data():
         print(">> Reconstructd pixels =  {} (origin) + {} (generated)".format(count_origin_pix, count_new_pix))
         
         # Odd treatment (deleted)
-        np_generated_index = np.array(range(0,len(zero_pic_pd))).reshape(args.height*args.up, args.width*args.up)
+        np_generated_index = np.array(range(0,len(zero_pic_pd))).reshape(args.height*SCALE, args.width*SCALE)
         if args.odd == 'height' or args.odd == 'both':
             print(">>> odd treatment in height")
             np_generated_index = np_generated_index[:-1, :]
@@ -177,7 +176,7 @@ class load_data():
         zero_pic_pd.insert(1, 'Spot', new_column_spot)
         
         # Saving
-        save_file = args.save + '_up' + str(args.up) + '.tsv'
+        save_file = args.save + '_up' + str(SCALE) + '.tsv'
         with open(save_file, 'w') as f:
             for com in self.comments:
                 f.write(com + "\n")
@@ -297,6 +296,9 @@ try:
 except Exception as e:
     print(">> Failed import of modelG {}: {}".format(args.modelG, e))
     sys.exit()
+    
+# Param
+SCALE = 2
 
 # Import data
 my_load = load_data()

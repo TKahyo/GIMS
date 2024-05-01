@@ -18,14 +18,14 @@ import matplotlib.pyplot as plt
 #import pdb # pdb.set_trace()
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--file', '-f', help = 'IMS data file path')
-parser.add_argument('--coln', '-c', default=3, type=int, help = 'Start column of m/z')
-parser.add_argument('--size', '-sh', help = 'picture size (height, width), e.g 24,28')
-parser.add_argument('--down', '-d', type=int, help = 'Downsamplint rate e.g. --down 2 => 1/2,1/2')
-parser.add_argument('--mz', '-mz', help = 'm/z e.g. --mz 798.00')
-parser.add_argument('--comp', '-cm', default=0, type=float, help = 'm/z value for comparison m/z (optional). e.g. --comp 888.63')
-parser.add_argument('--weight', '-w', default=1, type=float, help = 'Weight of comp. e.g. 0.5 => comp_max x 0.5, 3 => comp_max x 3')
-parser.add_argument('--save', '-s', type=str, help = 'basename for picture')
+parser.add_argument('--file', '-f', help = 'File path *')
+parser.add_argument('--coln', '-c', default=3, type=int, help = 'Start column of m/z, default=3')
+parser.add_argument('--size', '-sh', help = 'Imaging size (height,width), e.g 24,28 *')
+parser.add_argument('--down', '-d', type=int, help = 'Downsamplint rate e.g. --down 2 => 1/2,1/2, default=0')
+parser.add_argument('--mz', '-mz', help = 'm/z e.g. --mz 798.00 *')
+parser.add_argument('--comp', '-cm', default=0, type=float, help = 'm/z value for comparison m/z. e.g. --comp 888.63, default=0 (unused)')
+parser.add_argument('--weight', '-w', default=1, type=float, help = 'Weight of --comp. e.g. 0.5 => comparison m/z intensity x 0.5, default=1 (unused)')
+parser.add_argument('--save', '-s', type=str, help = 'basename for picture *')
 args = parser.parse_args()
 
 def ImportData(args):
