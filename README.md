@@ -57,7 +57,7 @@ X,Y,ROI,m/z,m/z,m/z,...
 
  
 # Usage
-**[1] Converting .csv file and Making datasets for training/test**
+**[1] Converting the csv file to the dataset for training/test**
    ```bash
    ./converter.sh --help
    ```
