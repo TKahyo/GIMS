@@ -129,7 +129,7 @@ cat path_list_test.txt
     --beta1d BETA1D, -b1d BETA1D   
                           Adam parameter:beta1 of D, default=0.9       
     --noise NOISE, -n NOISE   
-                          Rate of 1 in noise, default 0 = no noize   
+                          Rate of noise (0-1), default=0   
     --noisemin NOISEMIN, -nmi NOISEMIN   
                           Min of noize   
     --noisemax NOISEMAX, -nma NOISEMAX   
