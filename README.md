@@ -1,8 +1,6 @@
 # IMSG
 This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data using generative deep machine learning method.
 
-# DEMO
-Here, two kind demo data (DEMO_DATA1.csv and DEMO_DATA_test.csv) are provided. 
  
 # Features
 The CVAE model trained on surrounding nine pixel data to interpolate center three pixel data.
@@ -43,6 +41,10 @@ The CVAE model trained on surrounding nine pixel data to interpolate center thre
  GPU: NVIDIA TITAN X (Pascal) 12GB  
  System Mem: DDR4 64GB   
 </details>
+
+
+# DEMO DATA
+Here, two kind demo data (DEMO_DATA1.csv and DEMO_DATA_test.csv) are provided. 
 
 
 # Flow
