@@ -36,7 +36,7 @@ parser.add_argument('--shape', '-sh',default='2,11', type=str, help = 'Tensor sh
 parser.add_argument('--fbatch', '-fb', default=2, type=int, help = 'Batch size of files. e.g. fbatch=3 => 3 files import once from --data, default=2')
 parser.add_argument('--beta1g', '-b1g', default=0.9, type=float, help = 'Adam parameter:beta1 of G, default=0.9')
 parser.add_argument('--beta1d', '-b1d', default=0.9, type=float, help = 'Adam parameter:beta1 of D, default=0.9')
-parser.add_argument('--noise', '-n',default=0, type=float, help = 'Rate of 1 in noise, default 0 = no noize')
+parser.add_argument('--noise', '-n',default=0, type=float, help = 'Rate of noise (0-1), default=0')
 parser.add_argument('--noisemin', '-nmi', default=0.5, type=float, help = 'Min of noize')
 parser.add_argument('--noisemax', '-nma', default=2.0, type=float, help = 'Max of noize')
 parser.add_argument('--test', '-t', help = 'Path file of directories containing the pickle for test. If not necessary, put the same file as --data *') ######
