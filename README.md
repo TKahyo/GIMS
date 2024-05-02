@@ -45,7 +45,10 @@ The CVAE model trained on surrounding nine pixel data to interpolate center thre
 
 # DEMO DATA
 Here, two kind demo data (DEMO_DATA1.csv and DEMO_DATA_test.csv) are provided. 
-
+They are converted from IMS raw data by the IMAGEREVEAL:tm: (SHIMADZU).
+```bash
+X,Y,ROI,m/z,m/z,m/z,...
+```
 
 # Flow
 ![Flow chart](GIMS_flow_chart.png)
