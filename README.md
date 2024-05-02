@@ -117,8 +117,8 @@ cat path_list_test.txt
                           Relearning using modelG   
     --modelD MODELD, -md MODELD   
                           Relearning using modelD   
-    --dlr DLR, -dlr DLR   Learning rate, default 0.00015   
-    --glr GLR, -glr GLR   Learning rate, default 0.00015   
+    --dlr DLR, -dlr DLR   Learning rate, default=0.00015   
+    --glr GLR, -glr GLR   Learning rate, default=0.00015   
     --shape SHAPE, -sh SHAPE   
                           Tensor shape of mass spectrum e.g 2,11. Needed to be mathed to the total   
                           number of m/z peaks, default=2,11   
