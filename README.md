@@ -44,8 +44,9 @@ The CVAE model trained on surrounding nine pixel data to interpolate center thre
 
 
 # DEMO DATA
-Here, two kind demo data (DEMO_DATA1.csv and DEMO_DATA_test.csv) are provided. 
-They are converted from IMS raw data by the IMAGEREVEAL&trade; MS (SHIMADZU).
+Here, two kind of demo data (DEMO_DATA1.csv and DEMO_DATA_test.csv) are provided. 
+They have been converted from IMS raw data format to csv by the IMAGEREVEAL&trade; MS (SHIMADZU).   
+Columns of DEMO_DATA (.csv) are
 ```bash
 X,Y,ROI,m/z,m/z,m/z,...
 ```
