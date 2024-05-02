@@ -125,9 +125,9 @@ cat path_list_test.txt
     --fbatch FBATCH, -fb FBATCH   
                           Batch size of files. e.g. fbatch=3 => 3 files import once from --data, default=2     
     --beta1g BETA1G, -b1g BETA1G   
-                          Adam parameter:beta1 of G   
+                          Adam parameter:beta1 of G, default=0.9    
     --beta1d BETA1D, -b1d BETA1D   
-                          Adam parameter:beta1 of D   
+                          Adam parameter:beta1 of D, default=0.9       
     --noise NOISE, -n NOISE   
                           Rate of 1 in noise, default 0 = no noize   
     --noisemin NOISEMIN, -nmi NOISEMIN   
