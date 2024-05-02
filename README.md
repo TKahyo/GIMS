@@ -38,7 +38,7 @@ The CVAE model trained on surrounding nine pixel data to interpolate center thre
 
  *The hardware environment is described below for reference.   
  CPU: Intel(R) Xeon(R) CPU E5-2603 v4 @1.70GHz    
- GPU: NVIDIA TITAN X (Pascal) 12GB  
+ GPU: NVIDIA TITAN X (Pascal) 12GB (recommended for learning)   
  System Mem: DDR4 64GB   
 </details>
 
@@ -78,7 +78,7 @@ X,Y,ROI,m/z,m/z,m/z,...
   |    |--- d3_data_index_x_DEMO_DATA1_conv.pkl    
   |    |--- d3_data_index_y_DEMO_DATA1_conv.pkl    
   |    └--- d3_data_y_DEMO_DATA1_conv.pkl   
-  └--- DEMO_DATA1_conv_narrowed.tsv   
+  └--- DEMO_DATA1_conv_narrowed.tsv    
  ```
 
   *Do the same for DEMO_DATA_test (-e 28 -w 27)
@@ -135,7 +135,9 @@ cat path_list_test.txt
     --noisemax NOISEMAX, -nma NOISEMAX   
                           Max of noize   
     --test TEST, -t TEST  Path file of directories containing the pickle for test. If not necessary, put the same file as --data *   
-    --save SAVE, -s SAVE  pth save directory *   
+    --save SAVE, -s SAVE  pth save directory *
+
+   NOTE: "cuda:0" if torch.cuda.is_available() else "cpu"
    ```
    ```bash
    python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning
@@ -190,6 +192,8 @@ python ./scripts/TK_d5_Applying.py --help
                         Threshold for zero value, default=0
   --odd ODD, -o ODD     The number of original pixels is odd => --odd height or --odd width or --odd both, default=none
   --save SAVE, -s SAVE  Save basename
+
+NOTE: "cuda:0" if torch.cuda.is_available() else "cpu"
  ```
 ---
  ```bash
