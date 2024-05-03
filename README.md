@@ -51,6 +51,7 @@ The columns of demo data (.csv) are as follows:
 X,Y,ROI,m/z,m/z,m/z,...
 ```
 
+
 # Flow
 ![Flow chart](GIMS_flow_chart.png)
 
