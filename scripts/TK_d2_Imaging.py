@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul 21 16:22:24 2023
 Imaging of specific m/z ion
 python this.py --file [tsv file] --coln 3 --size 24,28  --mz 888.63 --save d2_XXX (--down )
 * --size height,width

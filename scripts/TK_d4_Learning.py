@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul 21 16:22:24 2023
+Generative deep learning
 python thispy --data paths_file.txt --dlr 0.00000002 --glr 0.00002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000 --save my_result
 [PID:v58]
 @author: tk
@@ -48,7 +48,7 @@ class kernel_param():
         self.k0 = []
         self.k00 = []
         self.k1 = []
-        self.k2 = []
+        #self.k2 = []
         self.k3 = []
         self.k4 = []
     
@@ -57,7 +57,7 @@ class kernel_param():
             self.k0 = [1,3]
             self.k00 = [2,3]
             self.k1 = [2,3]
-            self.k2 = [1,3]
+            #self.k2 = [1,3]
             self.k3 = [1,3]
             self.k4 = [1,3]
             self.s0 = 1

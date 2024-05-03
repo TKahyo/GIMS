@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Nov  1 13:02:10 2023
 Interpolating by LINEAR(inter 1) and Cubic(inter 3)
 python this.py --data d2B_xxx.tsv --header 2 --coln 3 --height X --width Y --save Z --inter 3
 @author: tk

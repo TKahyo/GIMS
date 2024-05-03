@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul 21 16:22:24 2023
 Spatially downsampled
 python this.py --file [.tsv] --coln 3 --size 24,28  --donwn 2 --save d2B.tsv
 *--down 2 => height 1/2, width 1/2

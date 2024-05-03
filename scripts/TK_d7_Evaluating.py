@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Nov 10 10:14:21 2023
 Evaluating the image quality by PSNR and SSIM
 python this.py --data1 d5.tsv --data2 d3_narrowed.tsv --coln 3 --height 28 --width 27 --save Z
 *--data1 is generated data, --data2 is measured true data

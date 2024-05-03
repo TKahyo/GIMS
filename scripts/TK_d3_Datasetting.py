@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul 21 16:22:24 2023
 Converting for learning data set (ignoring edges) & saving narrowed data
 python this.py --file [tsv file] --z 1 --narrow narrow_list.csv --coln 3 --stride 1 --height 28 --width 30 --batch 10 --save learning_data_set
 [PID:v11]
