@@ -50,6 +50,7 @@ The columns of demo data (.csv) are as follows:
 ```bash
 X,Y,ROI,m/z,m/z,m/z,...
 ```
+Target peaks are described in DEMO_LIST.csv.
 
 
 # Flow
