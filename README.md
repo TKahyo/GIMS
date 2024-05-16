@@ -141,7 +141,6 @@ cat path_list_test.txt
     --test TEST, -t TEST  Path file of directories containing the pickle for test. If not necessary, put the same file as --data *   
     --save SAVE, -s SAVE  pth save directory *
 
-   NOTE: "cuda:0" if torch.cuda.is_available() else "cpu"
    ```
    ```bash
    python ./scripts/TK_d4_learning.py --data path_file.txt --test path_list_test.txt --shape 2,11 --dlr 0.00000001 --glr 0.002 --beta1g 0.99 --batch 22224 –-fbatch 2 --epoch 1000--save learning
@@ -197,7 +196,6 @@ python ./scripts/TK_d5_Applying.py --help
   --odd ODD, -o ODD     The number of original pixels is odd => --odd height or --odd width or --odd both, default=none
   --save SAVE, -s SAVE  Save basename
 
-NOTE: "cuda:0" if torch.cuda.is_available() else "cpu"
  ```
 ---
  ```bash
