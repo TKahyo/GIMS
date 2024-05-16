@@ -1,9 +1,3 @@
-#GIMS
-
-##Description
-#####GIMS is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data using generative deep machine learning method.
-
-##Requirement
 
 # GIMS
 This is a tool developed for interpolating Imaging Mass Spectrometry (IMS) data using generative deep machine learning method.
