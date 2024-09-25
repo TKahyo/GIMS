@@ -199,7 +199,7 @@ python ./scripts/TK_d5_Applying.py --help
  ```
 ---
  ```bash
-python ./scripts/TK_d5_Applying.py --data downsampling.tsv --model G_YYY.pth  --height 14 --width 14--odd width --shape 2,11 --save applying
+python ./scripts/TK_d5_Applying.py --data downsampling_down2.tsv --model ./learning_BEST_weight/G_YYY.pth -up 2 --height 14 --width 14--odd width --shape 2,11 --save applying
  ```
 *output
  ```bash
@@ -210,13 +210,13 @@ applying.tsv
 **[6] Imaging**    
 
  ```bash
-python ./scripts/TK_d2_Imaging.py --file DEMO_DATA1_conv_narrowed.tsv --size 28,27  --mz 888.63 --save test_imaging_d5
+python ./scripts/TK_d2_Imaging.py --file DEMO_DATA1_conv_narrowed.tsv --size 26,27  --mz 888.63 --save test_imaging_d5
  ```
  ```bash
-python ./scripts/TK_d2_Imaging.py --file applying.tsv --size 28,27  --mz 888.63 --save applying_imaging_d5
+python ./scripts/TK_d2_Imaging.py --file applying_up2.tsv --size 28,27  --mz 888.63 --save applying_imaging_d5
  ```
  ```bash
-python ./scripts/TK_d2_Imaging.py --file downsampling.tsv --size 14,14  --mz 888.63 --save downsampling_imaging_d2B
+python ./scripts/TK_d2_Imaging.py --file downsampling_down2.tsv --size 14,14  --mz 888.63 --save downsampling_imaging_d2B
  ```
 *output
  ```bash
