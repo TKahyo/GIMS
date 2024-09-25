@@ -93,14 +93,14 @@ Target peaks are described in DEMO_LIST.csv.
 cat path_list.txt
 ```
 ```bash
-./DEMO_DATA1_dir/DEMO_DATA1_conv/
+./DEMO_DATA1_conv_dir/DEMO_DATA1_conv/
 ```
 ---
 ```bash
 cat path_list_test.txt
 ```
 ```bash
-./DEMO_DATA_test_dir/DEMO_DATA_test_conv/
+./DEMO_DATA_test_conv_dir/DEMO_DATA_test_conv/
 ```
 
   
