@@ -284,8 +284,8 @@ def test_eval(criterion2, model_G, model_D, data_y2, data_loader2, TEST_BATCH_SI
         test_loss_list = []
         test_score_list = []
         for index_x, index_y in data_loader2:    
-            index_x = index_x.int()
-            index_y = index_y.int()
+            index_x = index_x.long()
+            index_y = index_y.long()
             train_x = data_y2[index_x] 
             train_y = data_y2[index_y]
             train_x = train_x.to(deviceGC) 
