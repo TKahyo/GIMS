@@ -192,8 +192,8 @@ class train_vae():
             list_real_batchsize.append(self.real_batchsize)
             self.loader_count += 1
 
-            index_x = index_x.int()
-            index_y = index_y.int()
+            index_x = index_x.long()
+            index_y = index_y.long()
             train_x = data_y[index_x]
             train_y = data_y[index_y]
 
