@@ -7,6 +7,7 @@ python this.py --data d2B_xxx.tsv --header 2 --coln 3 --height X --width Y --sav
 """
 import argparse
 import pandas as pd
+import numpy as np
 import cv2
 e1 = cv2.getTickCount()
 import pdb # pdb.set_trace()
@@ -19,6 +20,7 @@ parser.add_argument('--height', '-he', type=int, help = 'The number of origin pi
 parser.add_argument('--width', '-wi', type=int, help = 'The number of origin picture ()small) width pixel')
 parser.add_argument('--odd', '-o', type=str, help = '--odd height, --odd width, or --odd both if the number of original pixels is odd.')
 parser.add_argument('--header', '-hd', type=int, default=2, help = 'Line number with header')
+parser.add_argument('--sharp', '-sha', type=int, default=0, help = 'Unsharp mask')
 parser.add_argument('--inter', '-in', type=int, default=3, help = 'Interpolation index [0-4]  = ["INTER_NEAREST","INTER_LINEAR","INTER_AREA","INTER_CUBIC","INTER_LANCZOS4"]')
 parser.add_argument('--save', '-s', type=str, help = 'Save basename')
 args = parser.parse_args()    
@@ -41,6 +43,16 @@ with open(args.data, 'r') as f:
 if input_data.iloc[:, -1].isnull().any():
     input_data = input_data.dropna(axis=1, how='any')
 input_data = input_data.iloc[:, args.coln-1:]
+
+# Unsharp mask
+def unsharp_mask(image, radius=3, amount=0.5, threshold=0):
+    blurred = cv2.GaussianBlur(image, (radius * 2 + 1, radius * 2 + 1), 0)
+    sharpened = cv2.addWeighted(image, 1 + amount, blurred, -amount, 0)
+    if threshold > 0:
+        low_contrast_mask = np.abs(image - blurred) < threshold
+        sharpened[low_contrast_mask] = image[low_contrast_mask]
+    return sharpened
+
 
 # Interporating by m/z
 processed_df = []
@@ -69,6 +81,10 @@ for column in range(0,input_data.shape[1]):
         print("> column: {}, max: {}".format(column, img.max()))
     except:
         print("Interporation failed > {}".format(column))
+        
+    if args.sharp:
+        img = unsharp_mask(img, radius=3, amount=0.5, threshold=0) # GIMP default
+        
     processed_df.append(img.reshape((img.size)))
 processed_df = pd.DataFrame(processed_df)
 if input_data.shape[1] > 1:
